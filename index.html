@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Incia seción</title>
+    </head>
+    <body>
+        <!-- Mensaje al maestro -->
+        <!-- 
+            La versión de este documento hace referencia a algunas pruebas que se ha realizado con el objetivo
+            de recapitular ciertas propiedades y elementos de estas tecnologías. La razón es para que el proyecto,
+            sea óptimo, presentable y dinamico.
+        -->
+        <!-- Barra de Navegación -->
+        <header>
+            <div class="logotipo"></div>
+            <nav>
+                <div class="boton_1"><a href="#">Inicio</a></div>
+                <div class="boton_2"><a href="#">Tienda</a></div>
+                <div class="boton_3"><a href="login.html">Login</a></div>
+            </nav>
+        </header>
+        <!-- Ventanas Para registrarse o iniciar sesión -->
+        <div class="inicioDeSesion">
+            <div class="titulo">Ingrese Sus Datos</div>
+            <div class="formulario">
+                <form>
+                    <label for="nombre_U">Nombre de Usuario</label>
+                    <br>
+                    <input type="text" name="nombreUsuario" id="nombre_U">
+                    <br>
+                    <label for="pass">Contraseña</label>
+                    <br>
+                    <input type="password" name="contraseña" id="pass">
+                </form>
+                <br>
+                <button type="submit" class="btnListo">Listo!</button><button class="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+        <div class="crearCuenta">
+            <div class="titulo">Registrese</div>
+            <div class="formulario">
+                <form>
+                    <label for="name">Nombre</label>
+                    <br>
+                    <input type="text" name="name" id="name" placeholder="ejemplo: Jese" >
+                    <br>
+                    <label for="lastname">Apellido </label>
+                    <br>
+                    <input type="text" name="lastname" id="lastname" placeholder="ejemplo: Gaitan" >
+                    <br>
+                    <label for="userName">Nombre de Usuario </label>
+                    <br>
+                    <input type="text" name="user_name" id="userName" placeholder="ejemplo: goku" >
+                    <br>
+                    <label for="password">Contraseña</label>
+                    <br>
+                    <input type="password" name="password" id="password">
+                </form>
+                <br>
+                <button type="submit" class="btnListo">Listo!</button><button class="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+        <!-- Objetos -->
+        <div class="arcade">
+            <div class="ParteDelMonitor">
+                <div class="rotulo"></div>
+                <div class="monitor"></div>
+            </div>
+            <div class="ParteDeLosControles">
+                <div class="controles">
+                    <div class="boton1">
+                        <div class="contenedor">
+                            <div class="caraSuperior control1">
+                               inicia
+                            </div>
+                            <div class="caraInferior control1">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boton2">
+                        <div class="contenedor">
+                            <div class="caraSuperior control2">
+                               registrate
+                            </div>
+                            <div class="caraInferior control2"> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tapa"></div>
+            </div>
+        </div>
+        <div class="suelo" id="suelo">
+        </div>
+        <script src="/js/procesardatos.js"></script>
+        <script src="/js/efectos_visuales.js"></script>
+    </body>
+</html>
