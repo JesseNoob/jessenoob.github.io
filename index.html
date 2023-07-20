@@ -1,106 +1,106 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="css/login.css">
-        <link rel="stylesheet" href="css/nav.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-        <title>Incia seción</title>
+        <title>Document</title>
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     </head>
-    <body>
-        <!-- Mensaje al maestro -->
-        <!-- 
-            La versión de este documento hace referencia a algunas pruebas que se ha realizado con el objetivo
-            de recapitular ciertas propiedades y elementos de estas tecnologías. La razón es para que el proyecto,
-            sea óptimo, presentable y dinamico.
-        -->
-        <!-- Barra de Navegación -->
-        <header>
-            <div class="logotipo"></div>
-            <nav>
-                <div class="boton_1"><a href="#">Inicio</a></div>
-                <div class="boton_2"><a href="#">Tienda</a></div>
-                <div class="boton_3"><a href="login.html">Login</a></div>
-            </nav>
-        </header>
-        <!-- Ventanas Para registrarse o iniciar sesión -->
-        <div class="inicioDeSesion">
-            <div class="titulo">Ingrese Sus Datos</div>
-            <div class="formulario">
-                <form>
-                    <label for="nombre_U">Nombre de Usuario</label>
-                    <br>
-                    <input type="text" name="nombreUsuario" id="nombre_U">
-                    <br>
-                    <label for="pass">Contraseña</label>
-                    <br>
-                    <input type="password" name="contraseña" id="pass">
-                </form>
-                <br>
-                <button type="submit" class="btnListo">Listo!</button><button class="btnCancelar">Cancelar</button>
-            </div>
-        </div>
-        <div class="crearCuenta">
-            <div class="titulo">Registrese</div>
-            <div class="formulario">
-                <form>
-                    <label for="name">Nombre</label>
-                    <br>
-                    <input type="text" name="name" id="name" placeholder="ejemplo: Jese" >
-                    <br>
-                    <label for="lastname">Apellido </label>
-                    <br>
-                    <input type="text" name="lastname" id="lastname" placeholder="ejemplo: Gaitan" >
-                    <br>
-                    <label for="userName">Nombre de Usuario </label>
-                    <br>
-                    <input type="text" name="user_name" id="userName" placeholder="ejemplo: goku" >
-                    <br>
-                    <label for="password">Contraseña</label>
-                    <br>
-                    <input type="password" name="password" id="password">
-                </form>
-                <br>
-                <button type="submit" class="btnListo">Listo!</button><button class="btnCancelar">Cancelar</button>
-            </div>
-        </div>
-        <!-- Objetos -->
-        <div class="arcade">
-            <div class="ParteDelMonitor">
-                <div class="rotulo"></div>
-                <div class="monitor"></div>
-            </div>
-            <div class="ParteDeLosControles">
-                <div class="controles">
-                    <div class="boton1">
-                        <div class="contenedor">
-                            <div class="caraSuperior control1">
-                               inicia
-                            </div>
-                            <div class="caraInferior control1">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="boton2">
-                        <div class="contenedor">
-                            <div class="caraSuperior control2">
-                               registrate
-                            </div>
-                            <div class="caraInferior control2"> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tapa"></div>
-            </div>
-        </div>
-        <div class="suelo" id="suelo">
-        </div>
-        <script src="/js/procesardatos.js"></script>
-        <script src="/js/efectos_visuales.js"></script>
+    <body>    
+        <a-scene>
+            <a-assets>
+                <!--   espacio       -->
+                <img src="source/sky.jpeg" id="sky">
+                <!--    SOL     -->
+                <img src="source/sol.jpg" id="s">
+                <!--   MERCURIO       -->
+                <img src="source/mercurio.jpg" id="mer">
+                <!--   VENUS       -->        
+                <img src="source/venus.jpg" id="ven">
+                <!--   TIERRA       -->        
+                <img src="source/tierra.jpg" id="tie">
+                <!--   LUNA       -->
+                <!--   MARTE       -->        
+                <img src="source/mar.jpg" id="mar">
+                <!--   JUPITER       -->        
+                <img src="source/jupiter.jpg" id="jup">
+                <!--   SATURNO       -->        
+                <img src="source/saturno.jpg" id="sat">
+                <!--   URANO       -->        
+                <img src="source/urano.jpg" id="ura">
+                <!--   NEPTUNO       -->        
+                <img src="source/neptuno.jpg" id="nep">
+                <!--   PLUTON       -->        
+            </a-assets>
+            <a-sky src="#sky"></a-sky>
+        
+    <!--Antes de posisionar un objeto tenga en cuenta esta observación:
+    La forma de posicionar un objeto hijo, es relativo al punto de origen de la etiqueta padre. Es decir, cuando hagan una orbita, el planeta que sigue
+    esa orbita no estará posicionado apartir del punto de origen del plano, si no de la orbita. Ejemplo: si tienen una órbita posicionada en 0 0 0 y
+    colocan un planeta dentro de ella en 10 0 0, el planeta estará posicionado a 10 metros del punto de origen de la órbita. Esto permite crear jerarquías
+    de objetos y organizarlos de manera más sencilla.
+            
+    Para hacer las orbitas lunares, deben colocar la luna a x distancia del punto de origen de dicha orbita. Es decir, apartir del planeta. Claramente 
+    esa orbita debe seguir la trayectoria del planeta.
+            
+     -->
+            <!-- SOL -->
+            <a-entity  geometry="primitive:sphere; radius:20;" position="0 0 0" material="shader:flat; src:#s"></a-entity>
+            
+             <!--MERCURIO -->
+                <a-entity id="orbita-mercurio" position="0 0 0" animation="property:rotation; to: 0 -360 0; loop: true; dur: 2000; easing:linear;">
+                    <a-entity  id="mercurio" geometry="primitive:sphere;radius:2.5;" position=" 30 0 0" material="shader:flat; src:#mer"></a-entity>
+                </a-entity>
+                
+                <!--venus -->
+                <a-entity id="orbita-venus" position="0 0 0" animation="property:rotation; to: 0 -360 0; loop: true; dur: 9000; easing:linear;">
+                    <a-entity id="venus" geometry="primitive:sphere;radius:4;" position=" 70 0 0" material="shader:flat; src:#ven"></a-entity>
+                </a-entity>
+
+                <!-- TIERRA -->
+                <a-entity id="orbita-tierra" position="0 0 0" animation="property:rotation; to: 0 360 0; loop: true; dur: 60000; easing:linear;">
+                    <a-entity id="tierra" geometry="primitive:sphere ;radius:4.5;" position="100 0 0" material="shader:flat; src:#tie"></a-entity>
+                    <a-entity id="orbita-luna" position="100 0 0" animation="property:rotation; to: 0 360 0; loop: true; dur: 2000; easing:linear;">
+                        <!-- LUNA -->
+                        <a-entity id="luna" geometry="primitive:sphere;radius:1.5;" position="10 0 0" material="shader:flat; color:gray;"></a-entity>
+                    </a-entity>
+                </a-entity>
+                
+                <!-- MARTE -->
+                <a-entity id="orbita-marte" position="0 0 0" animation="property:rotation; to: 0 -360 0; loop: true; dur: 65000; easing:linear;">
+                    <a-entity id="marte" geometry="primitive:sphere;radius:3;" position="  150 0 0" material="shader:flat; src: #mar "></a-entity>
+                </a-entity>
+
+                <!-- JUPITER -->
+                <a-entity id="orbita-jupiter" position="0 0 0" animation="property:rotation; to: 0 360 0; loop: true; dur: 70000; easing:linear;">
+                    <a-entity id="jupiter" geometry="primitive:sphere;radius:15;" position="  250 0 0" material="shader:flat; src: #jup"></a-entity>
+                </a-entity>
+                <!-- SATURNO -->
+                <a-entity id="orbita-saturno" position="0 0 0" animation="property:rotation; to: 0 -360 0; loop: true; dur: 100000; easing:linear;">
+                    <a-entity id="saturno" geometry="primitive:sphere;radius:13.5;" position="  300  0 0" material="shader:flat; src: #sat"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:20;"  position="300 0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:19.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:18.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:17.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:15.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:16.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:14.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:13.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:12.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:11.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:10.5;"  position="300  0 0" rotation="-50 0 0"></a-entity>
+                    <a-entity id="anillo" geometry="primitive:torus;radius-tubular:0.1; radius:9.5;"  position="300 0 0" rotation="-50 0 0"></a-entity>
+                </a-entity>
+                <!-- URANO-->
+                <a-entity id="orbita-urano" position="0 0 0" animation="property:rotation; to: 0 360 0; loop: true; dur: 9900; easing:linear;">
+                    <a-entity id="urano" geometry="primitive:sphere ;radius:13;" position="  450 0 0" material="shader:flat; src: #ura"></a-entity>
+                </a-entity>
+
+                <!-- NEPTUNO-->
+                <a-entity id="orbita-neptuno" position="0 0 0" animation="property:rotation; to: 0 -360 0; loop: true; dur: 82000; easing:linear;">
+                    <a-entity id="neptuno" geometry="primitive:sphere ;radius:10;" position="500 0 0" material="shader:flat; src:#nep"></a-entity>
+                </a-entity>
+            <!-- hay 4 planetas o 3 que su textura está incompleta es decir que se repite y además las medidas le reste 200m por que al parecer hay un limite de 500m-->
+        </a-scene>    
     </body>
 </html>
